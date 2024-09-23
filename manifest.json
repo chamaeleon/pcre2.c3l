@@ -47,7 +47,7 @@
       // C3 libraries this target depends on:
       "dependencies" : [],
       // The external libraries to link for this target:
-      "linked-libraries" : []
+      "linked-libraries" : [ "pcre2-posix" ]
     },
     "macos-aarch64" : {
       // Extra flags to the linker for this target:
