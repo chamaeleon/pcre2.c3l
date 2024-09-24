@@ -1,4 +1,4 @@
-module pcre2;
+module pcre2::posix;
 
 const CInt REG_ICASE    = 0x0001;  /* Maps to PCRE2_CASELESS */
 const CInt REG_NEWLINE  = 0x0002;  /* Maps to PCRE2_MULTILINE */
