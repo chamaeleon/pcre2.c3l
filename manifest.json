@@ -15,7 +15,7 @@
       // C3 libraries this target depends on:
       "dependencies" : [],
       // The external libraries to link for this target:
-      "linked-libraries" : []
+      "linked-libraries" : [ "pcre2-posix", "pcre2-8" ]
     },
     "linux-riscv32" : {
       // Extra flags to the linker for this target:
@@ -47,7 +47,7 @@
       // C3 libraries this target depends on:
       "dependencies" : [],
       // The external libraries to link for this target:
-      "linked-libraries" : [ "pcre2-posix", "pcre-8" ]
+      "linked-libraries" : [ "pcre2-posix", "pcre2-8" ]
     },
     "macos-aarch64" : {
       // Extra flags to the linker for this target:
