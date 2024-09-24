@@ -111,7 +111,7 @@
       // C3 libraries this target depends on:
       "dependencies" : [],
       // The external libraries to link for this target:
-      "linked-libraries" : [ "pcre2-posix", "pcre2-8" ]
+      "linked-libraries" : [ "pcre2-posix" ]
     },
   }
 }
