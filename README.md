@@ -10,7 +10,7 @@ Currently only the simple 4 function POSIX API is implemented. Ideally the libra
 
 There are 64-bit PCRE2 DLL files in the `windows-x64` directory. These were built using [vcpkg](https://vcpkg.io/). The DLL files need to be placed where `PATH` picks it up, or in the same directory as the executable, etc., like is the case for any other program and DLL.
 
-The `manifest.json` file currently only enables the linking of `pcre2-posix` for `windows-x64` and `linux-x64` (because that is what I have access to at the moment and can verify works). More will be added as needed or requested (of course anyone can add what they need in a local copy).
+The `manifest.json` file currently only enables the linking of `pcre2-posix` for `windows-x64`, `linux-x64`, and `linux-aarch64` (because that is what I have access to at the moment and can verify works). More will be added as needed or requested (of course anyone can add what they need in a local copy).
 
 ## Usage
 
