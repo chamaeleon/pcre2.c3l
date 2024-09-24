@@ -23,7 +23,7 @@ The `manifest.json` file currently only enables the linking of `pcre2-posix` for
 ```cpp
 module playground;
 import std::io;
-import pcre2;
+import pcre2::posix;
 
 fn void match(String s)
 {
@@ -33,18 +33,18 @@ fn void match(String s)
 
     Regex_t re;
     char *pattern = "([a-z]+) ([a-z]+)? ([a-z]+)";
-    CInt result = pcre2::regcomp(&re, pattern, pcre2::REG_ICASE);
-    defer pcre2::regfree(&re);
+    CInt result = posix::regcomp(&re, pattern, posix::REG_ICASE);
+    defer posix::regfree(&re);
     if (result != 0) {
-        pcre2::regerror(result, &re, &errbuf, 1024);
+        posix::regerror(result, &re, &errbuf, 1024);
         io::printfn("regcomp error: %s", (ZString)&errbuf);
         return;
     }
 
     Regmatch_t[4] matches;
-    result = pcre2::regexec(&re, s, 4, &matches, 0);
+    result = posix::regexec(&re, s, matches.len, &matches, 0);
     if (result != 0) {
-        pcre2::regerror(result, &re, &errbuf, 1024);
+        posix::regerror(result, &re, &errbuf, 1024);
         io::printfn("regexec error: %s", (ZString)&errbuf);
         return;
     }
