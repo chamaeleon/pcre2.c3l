@@ -36,8 +36,8 @@ struct Regex_t {
   void *re_pcre2_code;
   void *re_match_data;
   char *re_endp;
-  CULong re_nsub;
-  CULong re_erroffset;
+  usz re_nsub;
+  usz re_erroffset;
   CInt re_cflags;
 }
 
@@ -49,6 +49,6 @@ struct Regmatch_t {
 }
 
 extern fn CInt regcomp(Regex_t *preg, char *pattern, CInt flags) @extern("pcre2_regcomp");
-extern fn CInt regexec(Regex_t *preg, char *string, CULong nmatch, Regmatch_t *pmatch, CInt eflags) @extern("pcre2_regexec");
-extern fn CULong regerror(CInt errcode, Regex_t *preg, char *errbuf, CULong errbuf_size) @extern("pcre2_regerror");
+extern fn CInt regexec(Regex_t *preg, char *string, usz nmatch, Regmatch_t *pmatch, CInt eflags) @extern("pcre2_regexec");
+extern fn usz regerror(CInt errcode, Regex_t *preg, char *errbuf, usz errbuf_size) @extern("pcre2_regerror");
 extern fn void regfree(Regex_t *preg) @extern("pcre2_regfree");
