@@ -48,7 +48,7 @@ struct Regmatch_t {
   Regoff_t rm_eo;
 }
 
-extern fn CInt regcomp(Regex_t *preg, char *pattern, CInt flags) @extern("pcre2_regcomp");
-extern fn CInt regexec(Regex_t *preg, char *string, usz nmatch, Regmatch_t *pmatch, CInt eflags) @extern("pcre2_regexec");
+extern fn CInt regcomp(Regex_t *preg, ZString pattern, CInt flags) @extern("pcre2_regcomp");
+extern fn CInt regexec(Regex_t *preg, ZString string, usz nmatch, Regmatch_t *pmatch, CInt eflags) @extern("pcre2_regexec");
 extern fn usz regerror(CInt errcode, Regex_t *preg, char *errbuf, usz errbuf_size) @extern("pcre2_regerror");
 extern fn void regfree(Regex_t *preg) @extern("pcre2_regfree");
