@@ -25,14 +25,14 @@ module playground;
 import std::io;
 import pcre2::posix;
 
-fn void match(String s)
+fn void match(ZString s)
 {
     io::printfn("Input [%s]", s);
 
     char[1024] errbuf;
 
     Regex_t re;
-    char *pattern = "([a-z]+) ([a-z]+)? ([a-z]+)";
+    ZString pattern = "([a-z]+) ([a-z]+)? ([a-z]+)";
     CInt result = posix::regcomp(&re, pattern, posix::REG_ICASE);
     defer posix::regfree(&re);
     if (result != 0) {
@@ -63,8 +63,7 @@ fn void main(String[] args)
     match("abc 123 ghi");
     io::printn();
     match("abc  ghi");
-}
-```
+}```
 The output of this example code is
 ```
 Input [123 abc DEF ghi 456]
@@ -89,7 +88,7 @@ Match group 3 [ghi]
 ```
 fn CInt regcomp(
     Regex_t *preg,
-    char *pattern,
+    ZString pattern,
     CInt flags);
 ```
 Compiles a regular expression into a `Regex_t` variable. Returns 0 on success, otherwise an error code that can be used with `pcre2::regerror`.
@@ -99,7 +98,7 @@ Compiles a regular expression into a `Regex_t` variable. Returns 0 on success, o
 ```
 fn CInt regexec(
     Regex_t *preg,
-    char *string,
+    ZString string,
     usz nmatch,
     Regmatch_t *pmatch,
     CInt eflags);
