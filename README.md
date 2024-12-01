@@ -63,7 +63,8 @@ fn void main(String[] args)
     match("abc 123 ghi");
     io::printn();
     match("abc  ghi");
-}```
+}
+```
 The output of this example code is
 ```
 Input [123 abc DEF ghi 456]
